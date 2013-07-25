@@ -43,4 +43,19 @@ return array(
             'ViewJsonStrategy'
         )
     ),
+     // Doctrine config
+    'doctrine' => array(
+        'driver' => array(
+            'teshopify_driver' => array(
+                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'cache' => 'array',
+                'paths' => array(__DIR__ . '/../src/TeShopify/Entity')
+            ),
+            'orm_default' => array(
+                'drivers' => array(
+                    'TeShopify\Entity' => 'teshopify_driver'
+                )
+            )
+        )
+    )
 );
