@@ -64,6 +64,20 @@ class Product
      */
     protected $vendor;
     
+    /**
+     * @ORM\Column(type="array")
+     */
+    protected $images;
+    
+    /**
+     * @ORM\Column(type="array")
+     */
+    protected $options;
+        
+    /**
+     * @ORM\Column(type="array")
+     */
+    protected $tags;
     
 }
 
