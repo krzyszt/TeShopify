@@ -5,6 +5,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
+ * @ORM\Table(name="product")
  */
 class Product 
 {
@@ -63,11 +64,6 @@ class Product
      * @ORM\Column(type="string")
      */
     protected $vendor;
-    
-    /**
-     * @ORM\Column(type="array")
-     */
-    protected $images;
     
     /**
      * @ORM\Column(type="array")
