@@ -76,11 +76,6 @@ class ProductVariant
     protected $price;
     
     /**
-     * @ORM\Column(type="integer")
-     */
-    protected $product_id;
-    
-    /**
      * @ORM\Column(type="string")
      */
     protected $requires_shipping;
@@ -99,6 +94,11 @@ class ProductVariant
      * @ORM\Column(type="string")
      */
     protected $title;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Product")
+     */
+    protected $product;
     
 }
 

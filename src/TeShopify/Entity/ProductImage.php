@@ -26,11 +26,6 @@ class ProductImage
     protected $updated_at;
     
     /**
-     * @ORM\Column(type="integer")
-     */
-    protected $product_id;
-    
-    /**
      * @ORM\Column(type="string")
      */
     protected $src;
@@ -39,6 +34,11 @@ class ProductImage
      * @ORM\Column(type="integer")
      */
     protected $position;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Product")
+     */
+    protected $product;
     
 }
 
