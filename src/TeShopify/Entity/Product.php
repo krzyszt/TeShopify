@@ -2,6 +2,7 @@
 namespace TeShopify\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -74,6 +75,23 @@ class Product
      * @ORM\Column(type="array")
      */
     protected $tags;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="ProductImage", mappedBy="product")
+     */
+    protected $images;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="ProductVariant", mappedBy="product")
+     */
+    protected $variants;
+
+    public function __construct() {
+        $this->images = new ArrayCollection();
+        $this->variants = new ArrayCollection();
+    }
+    
+    
     
 }
 
