@@ -71,7 +71,7 @@ class ProductVariant
     protected $position;
     
     /**
-     * @ORM\Column(type="decimal")
+     * @ORM\Column(type="decimal", scale=2)
      */
     protected $price;
     
