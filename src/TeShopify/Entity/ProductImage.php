@@ -177,4 +177,16 @@ class ProductImage
     {
         return $this->product;
     }
+    
+    public function getArrayCopy() {
+        return get_object_vars($this);
+    }
+
+    public function populate($data = array()) {
+        $this->id = $data['id'];
+        $this->created_at = $data['created_at'];
+        $this->updated_at = $data['updated_at'];
+        $this->position = $data['position'];
+        $this->src = $data['src'];
+    }
 }
