@@ -99,7 +99,418 @@ class ProductVariant
      * @ORM\ManyToOne(targetEntity="Product")
      */
     protected $product;
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     * @return ProductVariant
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
     
+        return $this;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set created_at
+     *
+     * @param \DateTime $createdAt
+     * @return ProductVariant
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->created_at = $createdAt;
+    
+        return $this;
+    }
+
+    /**
+     * Get created_at
+     *
+     * @return \DateTime 
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Set updated_at
+     *
+     * @param \DateTime $updatedAt
+     * @return ProductVariant
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updated_at = $updatedAt;
+    
+        return $this;
+    }
+
+    /**
+     * Get updated_at
+     *
+     * @return \DateTime 
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Set compare_at_price
+     *
+     * @param string $compareAtPrice
+     * @return ProductVariant
+     */
+    public function setCompareAtPrice($compareAtPrice)
+    {
+        $this->compare_at_price = $compareAtPrice;
+    
+        return $this;
+    }
+
+    /**
+     * Get compare_at_price
+     *
+     * @return string 
+     */
+    public function getCompareAtPrice()
+    {
+        return $this->compare_at_price;
+    }
+
+    /**
+     * Set fulfillment_service
+     *
+     * @param string $fulfillmentService
+     * @return ProductVariant
+     */
+    public function setFulfillmentService($fulfillmentService)
+    {
+        $this->fulfillment_service = $fulfillmentService;
+    
+        return $this;
+    }
+
+    /**
+     * Get fulfillment_service
+     *
+     * @return string 
+     */
+    public function getFulfillmentService()
+    {
+        return $this->fulfillment_service;
+    }
+
+    /**
+     * Set grams
+     *
+     * @param integer $grams
+     * @return ProductVariant
+     */
+    public function setGrams($grams)
+    {
+        $this->grams = $grams;
+    
+        return $this;
+    }
+
+    /**
+     * Get grams
+     *
+     * @return integer 
+     */
+    public function getGrams()
+    {
+        return $this->grams;
+    }
+
+    /**
+     * Set inventory_management
+     *
+     * @param string $inventoryManagement
+     * @return ProductVariant
+     */
+    public function setInventoryManagement($inventoryManagement)
+    {
+        $this->inventory_management = $inventoryManagement;
+    
+        return $this;
+    }
+
+    /**
+     * Get inventory_management
+     *
+     * @return string 
+     */
+    public function getInventoryManagement()
+    {
+        return $this->inventory_management;
+    }
+
+    /**
+     * Set inventory_policy
+     *
+     * @param string $inventoryPolicy
+     * @return ProductVariant
+     */
+    public function setInventoryPolicy($inventoryPolicy)
+    {
+        $this->inventory_policy = $inventoryPolicy;
+    
+        return $this;
+    }
+
+    /**
+     * Get inventory_policy
+     *
+     * @return string 
+     */
+    public function getInventoryPolicy()
+    {
+        return $this->inventory_policy;
+    }
+
+    /**
+     * Set inventory_quantity
+     *
+     * @param integer $inventoryQuantity
+     * @return ProductVariant
+     */
+    public function setInventoryQuantity($inventoryQuantity)
+    {
+        $this->inventory_quantity = $inventoryQuantity;
+    
+        return $this;
+    }
+
+    /**
+     * Get inventory_quantity
+     *
+     * @return integer 
+     */
+    public function getInventoryQuantity()
+    {
+        return $this->inventory_quantity;
+    }
+
+    /**
+     * Set metafield
+     *
+     * @param \stdClass $metafield
+     * @return ProductVariant
+     */
+    public function setMetafield($metafield)
+    {
+        $this->metafield = $metafield;
+    
+        return $this;
+    }
+
+    /**
+     * Get metafield
+     *
+     * @return \stdClass 
+     */
+    public function getMetafield()
+    {
+        return $this->metafield;
+    }
+
+    /**
+     * Set option
+     *
+     * @param array $option
+     * @return ProductVariant
+     */
+    public function setOption($option)
+    {
+        $this->option = $option;
+    
+        return $this;
+    }
+
+    /**
+     * Get option
+     *
+     * @return array 
+     */
+    public function getOption()
+    {
+        return $this->option;
+    }
+
+    /**
+     * Set position
+     *
+     * @param integer $position
+     * @return ProductVariant
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
+    
+        return $this;
+    }
+
+    /**
+     * Get position
+     *
+     * @return integer 
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * Set price
+     *
+     * @param float $price
+     * @return ProductVariant
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return float 
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * Set requires_shipping
+     *
+     * @param string $requiresShipping
+     * @return ProductVariant
+     */
+    public function setRequiresShipping($requiresShipping)
+    {
+        $this->requires_shipping = $requiresShipping;
+    
+        return $this;
+    }
+
+    /**
+     * Get requires_shipping
+     *
+     * @return string 
+     */
+    public function getRequiresShipping()
+    {
+        return $this->requires_shipping;
+    }
+
+    /**
+     * Set sku
+     *
+     * @param string $sku
+     * @return ProductVariant
+     */
+    public function setSku($sku)
+    {
+        $this->sku = $sku;
+    
+        return $this;
+    }
+
+    /**
+     * Get sku
+     *
+     * @return string 
+     */
+    public function getSku()
+    {
+        return $this->sku;
+    }
+
+    /**
+     * Set taxable
+     *
+     * @param string $taxable
+     * @return ProductVariant
+     */
+    public function setTaxable($taxable)
+    {
+        $this->taxable = $taxable;
+    
+        return $this;
+    }
+
+    /**
+     * Get taxable
+     *
+     * @return string 
+     */
+    public function getTaxable()
+    {
+        return $this->taxable;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     * @return ProductVariant
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set product
+     *
+     * @param \TeShopify\Entity\Product $product
+     * @return ProductVariant
+     */
+    public function setProduct(\TeShopify\Entity\Product $product = null)
+    {
+        $this->product = $product;
+    
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \TeShopify\Entity\Product 
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
 }
-
-
