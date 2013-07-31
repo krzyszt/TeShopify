@@ -74,16 +74,14 @@ class Webservice {
         $this->id = $data['id'];
         $this->created_at = $data['created_at'];
         $this->updated_at = $data['updated_at'];
-        $this->published_at = $data['published_at'];
-        $this->body_html = $data['body_html'];
-        $this->handle = $data['handle'];
-        $this->product_type = $data['product_type'];
-        $this->published_scope = $data['published_scope'];
-        $this->template_suffix = $data['template_suffix'];
-        $this->title = $data['title'];
-        $this->vendor = $data['vendor'];
-        $this->options = $data['options'];
-        $this->tags = $data['tags'];
+        $this->name = $data['name'];
+        $this->description = $data['description'];
+        $this->uri = $data['uri'];
+        $this->apikey = $data['apikey'];
+        $this->sharedsecret = $data['sharedsecret'];
+        $this->syncdate = $data['syncdate'];
+        $this->synctime = $data['synctime'];
+        $this->issync = $data['issync'];
     }
 
 
