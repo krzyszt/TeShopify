@@ -3,6 +3,7 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'TeShopify\Controller\Index' => 'TeShopify\Controller\IndexController',
+            'TeShopify\Controller\Webservice' => 'TeShopify\Controller\WebserviceController',
         ),
     ),
     'router' => array(
