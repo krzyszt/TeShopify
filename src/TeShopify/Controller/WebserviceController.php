@@ -1,13 +1,14 @@
 <?php
+
 namespace TeShopify\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\JsonModel,    
+use Zend\View\Model\JsonModel,
     Doctrine\ORM\EntityManager,
     TeShopify\Entity\Webservice;
 
-class WebserviceController extends AbstractActionController{
-    
+class WebserviceController extends AbstractActionController {
+
     protected $webservice;
 
     /**
@@ -15,11 +16,10 @@ class WebserviceController extends AbstractActionController{
      */
     protected $em;
 
-    public function setEntityManager(EntityManager $em)
-    {
+    public function setEntityManager(EntityManager $em) {
         $this->em = $em;
     }
-    
+
     public function getEntityManager() {
         if (null === $this->em) {
             $this->em = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
@@ -39,6 +39,66 @@ class WebserviceController extends AbstractActionController{
                 ));
         return $result;
     }
-    
+
+    public function createAction() {
+        if ($this->getRequest()->isPost()) {
+            $data = $this->getRequest()->getPost();
+            $webservice = new Webservice();
+            $webservice->setCreatedAt(new \DateTime("now"));
+            $webservice->setName($data['name']);
+            $webservice->setDescription($data['description']);
+            $webservice->setUri($data['uri']);
+            $webservice->setApikey($data['apikey']);
+            $webservice->setSharedsecret($data['sharedsecret']);
+            $webservice->setIssync(0);
+            $webservice->setLeaf(true);
+            $this->getEntityManager()->persist($webservice);
+            $this->getEntityManager()->flush();
+            $result = new JsonModel(array(
+                        'msg' => 'Shop created',
+                        'success' => true,
+                    ));
+            return $result;
+        }
+    }
+
+    public function updateAction() {
+        if ($this->getRequest()->isPost()) {
+            $data = $this->getRequest()->getPost();
+            $id = (int) $data['id'];
+            if (!$id) {
+                $result = new JsonModel(array(
+                            'msg' => 'Please select a shopify shop.',
+                            'success' => false,
+                        ));
+                return $result;
+            }
+            try {
+                $webservice = $this->getEntityManager()->find('TeShopify\Entity\Webservice', $id);
+            } catch (\Exception $ex) {
+                $result = new JsonModel(array(
+                            'msg' => 'Application error. Please try again later. ',
+                            'success' => false,
+                        ));
+                return $result;
+            }
+            $webservice->setUpdatedAt(new \DateTime("now"));
+            $webservice->setName($data['name']);
+            $webservice->setDescription($data['description']);
+            $webservice->setUri($data['uri']);
+            $webservice->setApikey($data['apikey']);
+            $webservice->setSharedsecret($data['sharedsecret']);
+            $webservice->setIssync(0);
+            $webservice->setLeaf(true);
+            $this->getEntityManager()->persist($webservice);
+            $this->getEntityManager()->flush();
+            $result = new JsonModel(array(
+                        'msg' => 'Shopify Shop updated.',
+                        'success' => true,
+                    ));
+            return $result;
+        }
+    }
+
 }
 

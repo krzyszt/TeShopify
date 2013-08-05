@@ -36,7 +36,7 @@ class ProductImage
     protected $position;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Product")
+     * @ORM\ManyToOne(targetEntity="Product", inversedBy="images")
      */
     protected $product;    
 

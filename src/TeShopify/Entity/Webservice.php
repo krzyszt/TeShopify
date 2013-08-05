@@ -13,16 +13,17 @@ class Webservice {
     /**
      * @ORM\Id 
      * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
      */
     protected $id;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     protected $created_at;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     protected $updated_at;
 
@@ -32,7 +33,7 @@ class Webservice {
     protected $name;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $description;
     
@@ -52,12 +53,12 @@ class Webservice {
     protected $sharedsecret;
     
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable=true)
      */
     protected $syncdate;
     
     /**
-     * @ORM\Column(type="time")
+     * @ORM\Column(type="time", nullable=true)
      */
     protected $synctime;
     
@@ -77,7 +78,6 @@ class Webservice {
     }
 
     public function populate($data = array()) {
-        $this->id = $data['id'];
         $this->created_at = $data['created_at'];
         $this->updated_at = $data['updated_at'];
         $this->name = $data['name'];

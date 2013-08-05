@@ -96,7 +96,7 @@ class ProductVariant
     protected $title;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Product")
+     * @ORM\ManyToOne(targetEntity="Product", inversedBy="variants")
      */
     protected $product;
 
