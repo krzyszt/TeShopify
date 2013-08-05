@@ -66,6 +66,12 @@ class Webservice {
      */
     protected $issync;
     
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $leaf;
+
+
     public function getArrayCopy() {
         return get_object_vars($this);
     }
@@ -82,6 +88,7 @@ class Webservice {
         $this->syncdate = $data['syncdate'];
         $this->synctime = $data['synctime'];
         $this->issync = $data['issync'];
+        $this->leaf = $data['leaf'];
     }
 
 
@@ -336,5 +343,28 @@ class Webservice {
     public function getIssync()
     {
         return $this->issync;
+    }
+
+    /**
+     * Set leaf
+     *
+     * @param string $leaf
+     * @return Webservice
+     */
+    public function setLeaf($leaf)
+    {
+        $this->leaf = $leaf;
+    
+        return $this;
+    }
+
+    /**
+     * Get leaf
+     *
+     * @return string 
+     */
+    public function getLeaf()
+    {
+        return $this->leaf;
     }
 }

@@ -34,8 +34,8 @@ class WebserviceController extends AbstractActionController{
             $data[] = $object->getArrayCopy();
         }
         $result = new JsonModel(array(
-                    'data' => $data,
-                    'sucess' => true,
+                    'children' => $data,
+                    'success' => true,
                 ));
         return $result;
     }
