@@ -34,9 +34,9 @@ class WebserviceController extends AbstractActionController {
             $data[] = $object->getArrayCopy();
         }
         $result = new JsonModel(array(
-                    'children' => $data,
-                    'success' => true,
-                ));
+            'children' => $data,
+            'success' => true,
+        ));
         return $result;
     }
 
@@ -55,9 +55,9 @@ class WebserviceController extends AbstractActionController {
             $this->getEntityManager()->persist($webservice);
             $this->getEntityManager()->flush();
             $result = new JsonModel(array(
-                        'msg' => 'Shop created',
-                        'success' => true,
-                    ));
+                'msg' => 'Shop created',
+                'success' => true,
+            ));
             return $result;
         }
     }
@@ -68,18 +68,18 @@ class WebserviceController extends AbstractActionController {
             $id = (int) $data['id'];
             if (!$id) {
                 $result = new JsonModel(array(
-                            'msg' => 'Please select a shopify shop.',
-                            'success' => false,
-                        ));
+                    'msg' => 'Please select a shopify shop.',
+                    'success' => false,
+                ));
                 return $result;
             }
             try {
                 $webservice = $this->getEntityManager()->find('TeShopify\Entity\Webservice', $id);
             } catch (\Exception $ex) {
                 $result = new JsonModel(array(
-                            'msg' => 'Application error. Please try again later. ',
-                            'success' => false,
-                        ));
+                    'msg' => 'Application error. Please try again later. ',
+                    'success' => false,
+                ));
                 return $result;
             }
             $webservice->setUpdatedAt(new \DateTime("now"));
@@ -93,10 +93,48 @@ class WebserviceController extends AbstractActionController {
             $this->getEntityManager()->persist($webservice);
             $this->getEntityManager()->flush();
             $result = new JsonModel(array(
-                        'msg' => 'Shopify Shop updated.',
-                        'success' => true,
-                    ));
+                'msg' => 'Shopify Shop updated.',
+                'success' => true,
+            ));
             return $result;
+        }
+    }
+
+    public function deleteAction() {
+        if ($this->getRequest()->isPost()) {
+            $data = $this->getRequest()->getPost();
+            $id = (int) $data['id'];
+            if (!$id) {
+                $result = new JsonModel(array(
+                    'msg' => 'Please select a valid shopify shop.',
+                    'success' => false,
+                ));
+                return $result;
+            }
+            try {
+                $webservice = $this->getEntityManager()->find('TeShopify\Entity\Webservice', $id);
+            } catch (\Exception $ex) {
+                $result = new JsonModel(array(
+                    'msg' => 'Application error. Please try again later. ',
+                    'success' => false,
+                ));
+                return $result;
+            }
+            if ($webservice) {
+                $this->getEntityManager()->remove();
+                $this->getEntityManager()->flush();
+                $result = new JsonModel(array(
+                    'msg' => 'Record deleted',
+                    'success' => true,
+                ));
+                return $result;
+            } else {
+                $result = new JsonModel(array(
+                    'msg' => 'Application error. Please try again later. ',
+                    'success' => false,
+                ));
+                return $result;
+            }
         }
     }
 
