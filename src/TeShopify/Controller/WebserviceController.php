@@ -121,7 +121,7 @@ class WebserviceController extends AbstractActionController {
                 return $result;
             }
             if ($webservice) {
-                $this->getEntityManager()->remove();
+                $this->getEntityManager()->remove($webservice);
                 $this->getEntityManager()->flush();
                 $result = new JsonModel(array(
                     'msg' => 'Record deleted',
