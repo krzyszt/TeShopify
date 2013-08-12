@@ -4,6 +4,7 @@ return array(
         'invokables' => array(
             'TeShopify\Controller\Index' => 'TeShopify\Controller\IndexController',
             'TeShopify\Controller\Webservice' => 'TeShopify\Controller\WebserviceController',
+            'TeShopify\Controller\Product' => 'TeShopify\Controller\ProductController',
         ),
     ),
     'router' => array(
