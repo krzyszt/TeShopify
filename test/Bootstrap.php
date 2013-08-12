@@ -1,5 +1,5 @@
 <?php
-namespace TeShopifyTest;//Change this namespace for your test
+namespace TeShopifyTest;
 
 use Zend\Loader\AutoloaderFactory;
 use Zend\Mvc\Service\ServiceManagerConfig;
@@ -15,6 +15,7 @@ class Bootstrap
     protected static $serviceManager;
     protected static $config;
     protected static $bootstrap;
+    protected static $em;
 
     public static function init()
     {
@@ -53,9 +54,13 @@ class Bootstrap
         $serviceManager = new ServiceManager(new ServiceManagerConfig());
         $serviceManager->setService('ApplicationConfig', $config);
         $serviceManager->get('ModuleManager')->loadModules();
-
+        
         static::$serviceManager = $serviceManager;
         static::$config = $config;
+        
+//        Entity Manager
+        $em= $serviceManager->get('doctrine.entitymanager.orm_default');
+        static::$em = $em;
     }
 
     public static function getServiceManager()
@@ -66,6 +71,11 @@ class Bootstrap
     public static function getConfig()
     {
         return static::$config;
+    }
+    
+    public static function getEntityManager()
+    {
+        return static::$em;
     }
 
     protected static function initAutoloader()
