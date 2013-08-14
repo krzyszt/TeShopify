@@ -7,7 +7,7 @@ use TeShopify\Entity\Webservice;
 
 class WebserviceTest extends \TeShopifyTest\Entity\EntityTest {
     
-    public function testcanCreatewebservice(){
+    public function testcanCreateWebservice(){
         $this->assertInstanceOf('TeShopify\Entity\Webservice', new Webservice);
     }
     
