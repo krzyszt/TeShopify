@@ -72,6 +72,9 @@ class Webservice {
      */
     protected $leaf;
 
+    public function __construct() {
+        $this->created_at = new \DateTime(date('Y-m-d H:i:s'));
+    }
 
     public function getArrayCopy() {
         return get_object_vars($this);

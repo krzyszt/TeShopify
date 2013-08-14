@@ -16,12 +16,12 @@ class ProductVariant
     protected $id;
     
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     protected $created_at;
     
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     protected $updated_at;
     
@@ -99,6 +99,10 @@ class ProductVariant
      * @ORM\ManyToOne(targetEntity="Product", inversedBy="variants")
      */
     protected $product;
+    
+    public function __construct() {
+        $this->created_at = new \DateTime(date('Y-m-d H:i:s'));
+    }
 
     /**
      * Set id

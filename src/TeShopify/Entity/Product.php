@@ -19,12 +19,12 @@ class Product {
     protected $id;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     protected $created_at;
 
     /**
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     protected $updated_at;
 
@@ -79,7 +79,7 @@ class Product {
     protected $tags;
 
     /**
-     * @ORM\OneToMany(targetEntity="ProductImage", mappedBy="product")
+     * @ORM\OneToMany(targetEntity="ProductImage", mappedBy="product", cascade={"persist", "remove"})
      */
     protected $images;
 
@@ -91,6 +91,7 @@ class Product {
     public function __construct() {
         $this->images = new ArrayCollection();
         $this->variants = new ArrayCollection();
+        $this->created_at = new \DateTime(date('Y-m-d H:i:s'));
     }
 
     public function getArrayCopy() {

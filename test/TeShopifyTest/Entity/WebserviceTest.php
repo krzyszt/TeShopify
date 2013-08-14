@@ -5,7 +5,16 @@ namespace TeShopifyTest\Entity;
 use TeShopifyTest\Bootstrap;
 use TeShopify\Entity\Webservice;
 
-class WebserviceTest extends \TeShopifyTest\Entity\EntityTest {
+class WebserviceTest extends \PHPUnit_Framework_TestCase {
+    
+    protected function setUp() {
+        $em = Bootstrap::getEntityManager();
+        $tool = new \Doctrine\ORM\Tools\SchemaTool($em);
+        $classes = $em->getMetadataFactory()->getAllMetadata();
+        $tool->dropSchema($classes);
+        $tool->createSchema($classes);
+        parent::setUp();
+    }
     
     public function testcanCreateWebservice(){
         $this->assertInstanceOf('TeShopify\Entity\Webservice', new Webservice);
@@ -41,7 +50,6 @@ class WebserviceTest extends \TeShopifyTest\Entity\EntityTest {
     
     private function getTestWebservice(){
         $w = new Webservice();
-        $w->setCreatedAt(new \DateTime("now"));
         $w->setName('MyService');
         $w->setDescription('MyServiceDescr');
         $w->setUri('www.myserviceuri.com');

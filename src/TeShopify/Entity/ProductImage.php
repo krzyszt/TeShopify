@@ -12,16 +12,17 @@ class ProductImage
     /**
      * @ORM\Id 
      * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
      */
     protected $id;
     
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     protected $created_at;
     
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     protected $updated_at;
     
@@ -36,11 +37,16 @@ class ProductImage
     protected $position;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Product", inversedBy="images")
+     * @ORM\ManyToOne(targetEntity="Product", inversedBy="images", cascade={"persist"})
+     *
      */
     protected $product;    
 
-    /**
+    public function __construct() {
+        $this->created_at = new \DateTime(date('Y-m-d H:i:s'));
+    }
+
+        /**
      * Set id
      *
      * @param integer $id
