@@ -26,7 +26,7 @@
             <h2>Class Coverage Distribution</h2>
             <canvas id="classCoverageDistribution" width="475" height="200"></canvas>
             <script>
-            var ccd = new RGraph.Bar('classCoverageDistribution', [0,2,3,6,3,1,0,1,3,0,0,0]);
+            var ccd = new RGraph.Bar('classCoverageDistribution', [0,2,3,3,3,0,1,2,3,0,1,1]);
             ccd.Set('chart.background.barcolor1', 'white');
             ccd.Set('chart.background.barcolor2', 'white');
             ccd.Set('chart.colors', ['blue']);
@@ -43,7 +43,7 @@
             <h2>Class Complexity</h2>
             <canvas id="classComplexity" width="475" height="200"></canvas>
             <script>
-            var cc = new RGraph.Scatter('classComplexity', [[33.333333333333,9,"blue","ArrayType"],[20,5,"blue","BigIntType"],[8.3333333333333,7,"blue","BlobType"],[16.666666666667,6,"blue","BooleanType"],[27.272727272727,8,"blue","DateTimeType"],[9.0909090909091,8,"blue","DateTimeTzType"],[27.272727272727,8,"blue","DateType"],[75,4,"blue","DecimalType"],[25,4,"blue","FloatType"],[33.333333333333,2,"blue","GuidType"],[60,5,"blue","IntegerType"],[18.181818181818,8,"blue","JsonArrayType"],[33.333333333333,9,"blue","ObjectType"],[18.181818181818,8,"blue","SimpleArrayType"],[20,5,"blue","SmallIntType"],[75,3,"blue","StringType"],[75,4,"blue","TextType"],[27.272727272727,8,"blue","TimeType"],[43.75,27,"blue","Type"]]);
+            var cc = new RGraph.Scatter('classComplexity', [[33.333333333333,9,"blue","ArrayType"],[20,5,"blue","BigIntType"],[8.3333333333333,7,"blue","BlobType"],[16.666666666667,6,"blue","BooleanType"],[90.909090909091,8,"blue","DateTimeType"],[9.0909090909091,8,"blue","DateTimeTzType"],[63.636363636364,8,"blue","DateType"],[75,4,"blue","DecimalType"],[25,4,"blue","FloatType"],[33.333333333333,2,"blue","GuidType"],[100,5,"blue","IntegerType"],[18.181818181818,8,"blue","JsonArrayType"],[33.333333333333,9,"blue","ObjectType"],[18.181818181818,8,"blue","SimpleArrayType"],[20,5,"blue","SmallIntType"],[75,3,"blue","StringType"],[75,4,"blue","TextType"],[63.636363636364,8,"blue","TimeType"],[53.125,27,"blue","Type"]]);
             cc.Set('chart.xmax', 100);
             cc.Set('chart.background.barcolor1', 'white');
             cc.Set('chart.background.barcolor2', 'white');
@@ -59,16 +59,16 @@
           <td valign="top">
             <h2>Top Project Risks</h2>
             <ul>
-              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_TimeType.php.html#29">TimeType</a> (32)</li>
-              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_DateType.php.html#29">DateType</a> (32)</li>
-              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_DateTimeType.php.html#29">DateTimeType</a> (32)</li>
+              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_ObjectType.php.html#29">ObjectType</a> (33)</li>
               <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_BooleanType.php.html#31">BooleanType</a> (26)</li>
               <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_SmallIntType.php.html#31">SmallIntType</a> (17)</li>
               <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_BigIntType.php.html#32">BigIntType</a> (17)</li>
+              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_DateType.php.html#29">DateType</a> (11)</li>
+              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_TimeType.php.html#29">TimeType</a> (11)</li>
               <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_FloatType.php.html#25">FloatType</a> (10)</li>
-              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_IntegerType.php.html#32">IntegerType</a> (6)</li>
-              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_TextType.php.html#31">TextType</a> (4)</li>
+              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_DateTimeType.php.html#29">DateTimeType</a> (8)</li>
               <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_DecimalType.php.html#29">DecimalType</a> (4)</li>
+              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_TextType.php.html#31">TextType</a> (4)</li>
 
             </ul>
           </td>
@@ -76,16 +76,16 @@
           <td valign="top">
             <h2>Least Tested Methods</h2>
             <ul>
-              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_SimpleArrayType.php.html#40">SimpleArrayType::convertToDatabaseValue</a> (0%)</li>
-              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_SimpleArrayType.php.html#35">SimpleArrayType::getSQLDeclaration</a> (0%)</li>
-              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_SimpleArrayType.php.html#49">SimpleArrayType::convertToPHPValue</a> (0%)</li>
-              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_SimpleArrayType.php.html#60">SimpleArrayType::getName</a> (0%)</li>
-              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_SmallIntType.php.html#38">SmallIntType::getSQLDeclaration</a> (0%)</li>
-              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_SmallIntType.php.html#33">SmallIntType::getName</a> (0%)</li>
               <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_ObjectType.php.html#41">ObjectType::convertToPHPValue</a> (0%)</li>
               <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_ObjectType.php.html#36">ObjectType::convertToDatabaseValue</a> (0%)</li>
+              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_SimpleArrayType.php.html#35">SimpleArrayType::getSQLDeclaration</a> (0%)</li>
+              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_SimpleArrayType.php.html#40">SimpleArrayType::convertToDatabaseValue</a> (0%)</li>
+              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_SimpleArrayType.php.html#49">SimpleArrayType::convertToPHPValue</a> (0%)</li>
+              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_JsonArrayType.php.html#57">JsonArrayType::getName</a> (0%)</li>
+              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_JsonArrayType.php.html#46">JsonArrayType::convertToPHPValue</a> (0%)</li>
+              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_GuidType.php.html#32">GuidType::getSQLDeclaration</a> (0%)</li>
+              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_GuidType.php.html#37">GuidType::getName</a> (0%)</li>
               <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_JsonArrayType.php.html#32">JsonArrayType::getSQLDeclaration</a> (0%)</li>
-              <li><a href="vendor_doctrine_dbal_lib_Doctrine_DBAL_Types_IntegerType.php.html#49">IntegerType::getBindingType</a> (0%)</li>
 
             </ul>
           </td>
@@ -97,7 +97,7 @@
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
-      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.0.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu3.7</a> and PHPUnit 3.5.15 at Tue Aug 13 13:03:57 CEST 2013.</td></tr>
+      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.0.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu3.7</a> and PHPUnit 3.5.15 at Wed Aug 14 9:34:42 CEST 2013.</td></tr>
     </table>
 
     <br/>

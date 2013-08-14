@@ -546,12 +546,12 @@
 <span class="lineNum" id="container66"><a name="66"></a><a href="#66" id="line66">      66</a> </span>                :      */                                                                                                                                   
 <span class="lineNum" id="container67"><a name="67"></a><a href="#67" id="line67">      67</a> </span>                :     public function __construct(array $localColumnNames, $foreignTableName, array $foreignColumnNames, $name=null, array $options=array())
 <span class="lineNum" id="container68"><a name="68"></a><a href="#68" id="line68">      68</a> </span>                :     {                                                                                                                                     
-<span class="lineNum" id="container69"><a name="69"></a><a href="#69" id="line69">      69</a> </span><span class="lineCov">              2 :         $this-&gt;_setName($name);                                                                                                           </span>
-<span class="lineNum" id="container70"><a name="70"></a><a href="#70" id="line70">      70</a> </span><span class="lineCov">              2 :         $this-&gt;_localColumnNames = $localColumnNames;                                                                                     </span>
-<span class="lineNum" id="container71"><a name="71"></a><a href="#71" id="line71">      71</a> </span><span class="lineCov">              2 :         $this-&gt;_foreignTableName = $foreignTableName;                                                                                     </span>
-<span class="lineNum" id="container72"><a name="72"></a><a href="#72" id="line72">      72</a> </span><span class="lineCov">              2 :         $this-&gt;_foreignColumnNames = $foreignColumnNames;                                                                                 </span>
-<span class="lineNum" id="container73"><a name="73"></a><a href="#73" id="line73">      73</a> </span><span class="lineCov">              2 :         $this-&gt;_options = $options;                                                                                                       </span>
-<span class="lineNum" id="container74"><a name="74"></a><a href="#74" id="line74">      74</a> </span><span class="lineCov">              2 :     }                                                                                                                                     </span>
+<span class="lineNum" id="container69"><a name="69"></a><a href="#69" id="line69">      69</a> </span><span class="lineCov">              3 :         $this-&gt;_setName($name);                                                                                                           </span>
+<span class="lineNum" id="container70"><a name="70"></a><a href="#70" id="line70">      70</a> </span><span class="lineCov">              3 :         $this-&gt;_localColumnNames = $localColumnNames;                                                                                     </span>
+<span class="lineNum" id="container71"><a name="71"></a><a href="#71" id="line71">      71</a> </span><span class="lineCov">              3 :         $this-&gt;_foreignTableName = $foreignTableName;                                                                                     </span>
+<span class="lineNum" id="container72"><a name="72"></a><a href="#72" id="line72">      72</a> </span><span class="lineCov">              3 :         $this-&gt;_foreignColumnNames = $foreignColumnNames;                                                                                 </span>
+<span class="lineNum" id="container73"><a name="73"></a><a href="#73" id="line73">      73</a> </span><span class="lineCov">              3 :         $this-&gt;_options = $options;                                                                                                       </span>
+<span class="lineNum" id="container74"><a name="74"></a><a href="#74" id="line74">      74</a> </span><span class="lineCov">              3 :     }                                                                                                                                     </span>
 <span class="lineNum" id="container75"><a name="75"></a><a href="#75" id="line75">      75</a> </span>                :                                                                                                                                           
 <span class="lineNum" id="container76"><a name="76"></a><a href="#76" id="line76">      76</a> </span>                :     /**                                                                                                                                   
 <span class="lineNum" id="container77"><a name="77"></a><a href="#77" id="line77">      77</a> </span>                :      * @return string                                                                                                                     
@@ -566,20 +566,20 @@
 <span class="lineNum" id="container86"><a name="86"></a><a href="#86" id="line86">      86</a> </span>                :      */                                                                                                                                   
 <span class="lineNum" id="container87"><a name="87"></a><a href="#87" id="line87">      87</a> </span>                :     public function setLocalTable(Table $table)                                                                                           
 <span class="lineNum" id="container88"><a name="88"></a><a href="#88" id="line88">      88</a> </span>                :     {                                                                                                                                     
-<span class="lineNum" id="container89"><a name="89"></a><a href="#89" id="line89">      89</a> </span><span class="lineCov">              2 :         $this-&gt;_localTable = $table;                                                                                                      </span>
-<span class="lineNum" id="container90"><a name="90"></a><a href="#90" id="line90">      90</a> </span><span class="lineCov">              2 :     }                                                                                                                                     </span>
+<span class="lineNum" id="container89"><a name="89"></a><a href="#89" id="line89">      89</a> </span><span class="lineCov">              3 :         $this-&gt;_localTable = $table;                                                                                                      </span>
+<span class="lineNum" id="container90"><a name="90"></a><a href="#90" id="line90">      90</a> </span><span class="lineCov">              3 :     }                                                                                                                                     </span>
 <span class="lineNum" id="container91"><a name="91"></a><a href="#91" id="line91">      91</a> </span>                :                                                                                                                                           
 <span class="lineNum" id="container92"><a name="92"></a><a href="#92" id="line92">      92</a> </span>                :     /**                                                                                                                                   
 <span class="lineNum" id="container93"><a name="93"></a><a href="#93" id="line93">      93</a> </span>                :      * @return array                                                                                                                      
 <span class="lineNum" id="container94"><a name="94"></a><a href="#94" id="line94">      94</a> </span>                :      */                                                                                                                                   
 <span class="lineNum" id="container95"><a name="95"></a><a href="#95" id="line95">      95</a> </span>                :     public function getLocalColumns()                                                                                                     
 <span class="lineNum" id="container96"><a name="96"></a><a href="#96" id="line96">      96</a> </span>                :     {                                                                                                                                     
-<span class="lineNum" id="container97"><a name="97"></a><a href="#97" id="line97">      97</a> </span><span class="lineCov">              2 :         return $this-&gt;_localColumnNames;                                                                                                  </span>
+<span class="lineNum" id="container97"><a name="97"></a><a href="#97" id="line97">      97</a> </span><span class="lineCov">              3 :         return $this-&gt;_localColumnNames;                                                                                                  </span>
 <span class="lineNum" id="container98"><a name="98"></a><a href="#98" id="line98">      98</a> </span><span class="lineDeadCode">                :     }                                                                                                                                     </span>
 <span class="lineNum" id="container99"><a name="99"></a><a href="#99" id="line99">      99</a> </span>                :                                                                                                                                           
 <span class="lineNum" id="container100"><a name="100"></a><a href="#100" id="line100">     100</a> </span>                :     public function getColumns()                                                                                                          
 <span class="lineNum" id="container101"><a name="101"></a><a href="#101" id="line101">     101</a> </span>                :     {                                                                                                                                     
-<span class="lineNum" id="container102"><a name="102"></a><a href="#102" id="line102">     102</a> </span><span class="lineCov">              2 :         return $this-&gt;_localColumnNames;                                                                                                  </span>
+<span class="lineNum" id="container102"><a name="102"></a><a href="#102" id="line102">     102</a> </span><span class="lineCov">              3 :         return $this-&gt;_localColumnNames;                                                                                                  </span>
 <span class="lineNum" id="container103"><a name="103"></a><a href="#103" id="line103">     103</a> </span><span class="lineDeadCode">                :     }                                                                                                                                     </span>
 <span class="lineNum" id="container104"><a name="104"></a><a href="#104" id="line104">     104</a> </span>                :                                                                                                                                           
 <span class="lineNum" id="container105"><a name="105"></a><a href="#105" id="line105">     105</a> </span>                :     /**                                                                                                                                   
@@ -587,7 +587,7 @@
 <span class="lineNum" id="container107"><a name="107"></a><a href="#107" id="line107">     107</a> </span>                :      */                                                                                                                                   
 <span class="lineNum" id="container108"><a name="108"></a><a href="#108" id="line108">     108</a> </span>                :     public function getForeignTableName()                                                                                                 
 <span class="lineNum" id="container109"><a name="109"></a><a href="#109" id="line109">     109</a> </span>                :     {                                                                                                                                     
-<span class="lineNum" id="container110"><a name="110"></a><a href="#110" id="line110">     110</a> </span><span class="lineCov">              2 :         return $this-&gt;_foreignTableName;                                                                                                  </span>
+<span class="lineNum" id="container110"><a name="110"></a><a href="#110" id="line110">     110</a> </span><span class="lineCov">              3 :         return $this-&gt;_foreignTableName;                                                                                                  </span>
 <span class="lineNum" id="container111"><a name="111"></a><a href="#111" id="line111">     111</a> </span><span class="lineDeadCode">                :     }                                                                                                                                     </span>
 <span class="lineNum" id="container112"><a name="112"></a><a href="#112" id="line112">     112</a> </span>                :                                                                                                                                           
 <span class="lineNum" id="container113"><a name="113"></a><a href="#113" id="line113">     113</a> </span>                :     /**                                                                                                                                   
@@ -610,13 +610,13 @@
 <span class="lineNum" id="container130"><a name="130"></a><a href="#130" id="line130">     130</a> </span>                :      */                                                                                                                                   
 <span class="lineNum" id="container131"><a name="131"></a><a href="#131" id="line131">     131</a> </span>                :     public function getQuotedForeignTableName(AbstractPlatform $platform)                                                                 
 <span class="lineNum" id="container132"><a name="132"></a><a href="#132" id="line132">     132</a> </span>                :     {                                                                                                                                     
-<span class="lineNum" id="container133"><a name="133"></a><a href="#133" id="line133">     133</a> </span><span class="lineCov">              2 :         $keywords = $platform-&gt;getReservedKeywordsList();                                                                                 </span>
-<span class="lineNum" id="container134"><a name="134"></a><a href="#134" id="line134">     134</a> </span><span class="lineCov">              2 :         $parts = explode(&quot;.&quot;, $this-&gt;getForeignTableName());                                                                              </span>
-<span class="lineNum" id="container135"><a name="135"></a><a href="#135" id="line135">     135</a> </span><span class="lineCov">              2 :         foreach ($parts AS $k =&gt; $v) {                                                                                                    </span>
-<span class="lineNum" id="container136"><a name="136"></a><a href="#136" id="line136">     136</a> </span><span class="lineCov">              2 :             $parts[$k] = ($this-&gt;_quoted || $keywords-&gt;isKeyword($v)) ? $platform-&gt;quoteIdentifier($v) : $v;                              </span>
-<span class="lineNum" id="container137"><a name="137"></a><a href="#137" id="line137">     137</a> </span><span class="lineCov">              2 :         }                                                                                                                                 </span>
+<span class="lineNum" id="container133"><a name="133"></a><a href="#133" id="line133">     133</a> </span><span class="lineCov">              3 :         $keywords = $platform-&gt;getReservedKeywordsList();                                                                                 </span>
+<span class="lineNum" id="container134"><a name="134"></a><a href="#134" id="line134">     134</a> </span><span class="lineCov">              3 :         $parts = explode(&quot;.&quot;, $this-&gt;getForeignTableName());                                                                              </span>
+<span class="lineNum" id="container135"><a name="135"></a><a href="#135" id="line135">     135</a> </span><span class="lineCov">              3 :         foreach ($parts AS $k =&gt; $v) {                                                                                                    </span>
+<span class="lineNum" id="container136"><a name="136"></a><a href="#136" id="line136">     136</a> </span><span class="lineCov">              3 :             $parts[$k] = ($this-&gt;_quoted || $keywords-&gt;isKeyword($v)) ? $platform-&gt;quoteIdentifier($v) : $v;                              </span>
+<span class="lineNum" id="container137"><a name="137"></a><a href="#137" id="line137">     137</a> </span><span class="lineCov">              3 :         }                                                                                                                                 </span>
 <span class="lineNum" id="container138"><a name="138"></a><a href="#138" id="line138">     138</a> </span>                :                                                                                                                                           
-<span class="lineNum" id="container139"><a name="139"></a><a href="#139" id="line139">     139</a> </span><span class="lineCov">              2 :         return implode(&quot;.&quot;, $parts);                                                                                                      </span>
+<span class="lineNum" id="container139"><a name="139"></a><a href="#139" id="line139">     139</a> </span><span class="lineCov">              3 :         return implode(&quot;.&quot;, $parts);                                                                                                      </span>
 <span class="lineNum" id="container140"><a name="140"></a><a href="#140" id="line140">     140</a> </span><span class="lineDeadCode">                :     }                                                                                                                                     </span>
 <span class="lineNum" id="container141"><a name="141"></a><a href="#141" id="line141">     141</a> </span>                :                                                                                                                                           
 <span class="lineNum" id="container142"><a name="142"></a><a href="#142" id="line142">     142</a> </span>                :     /**                                                                                                                                   
@@ -624,12 +624,12 @@
 <span class="lineNum" id="container144"><a name="144"></a><a href="#144" id="line144">     144</a> </span>                :      */                                                                                                                                   
 <span class="lineNum" id="container145"><a name="145"></a><a href="#145" id="line145">     145</a> </span>                :     public function getForeignColumns()                                                                                                   
 <span class="lineNum" id="container146"><a name="146"></a><a href="#146" id="line146">     146</a> </span>                :     {                                                                                                                                     
-<span class="lineNum" id="container147"><a name="147"></a><a href="#147" id="line147">     147</a> </span><span class="lineCov">              2 :         return $this-&gt;_foreignColumnNames;                                                                                                </span>
+<span class="lineNum" id="container147"><a name="147"></a><a href="#147" id="line147">     147</a> </span><span class="lineCov">              3 :         return $this-&gt;_foreignColumnNames;                                                                                                </span>
 <span class="lineNum" id="container148"><a name="148"></a><a href="#148" id="line148">     148</a> </span><span class="lineDeadCode">                :     }                                                                                                                                     </span>
 <span class="lineNum" id="container149"><a name="149"></a><a href="#149" id="line149">     149</a> </span>                :                                                                                                                                           
 <span class="lineNum" id="container150"><a name="150"></a><a href="#150" id="line150">     150</a> </span>                :     public function hasOption($name)                                                                                                      
 <span class="lineNum" id="container151"><a name="151"></a><a href="#151" id="line151">     151</a> </span>                :     {                                                                                                                                     
-<span class="lineNum" id="container152"><a name="152"></a><a href="#152" id="line152">     152</a> </span><span class="lineCov">              2 :         return isset($this-&gt;_options[$name]);                                                                                             </span>
+<span class="lineNum" id="container152"><a name="152"></a><a href="#152" id="line152">     152</a> </span><span class="lineCov">              3 :         return isset($this-&gt;_options[$name]);                                                                                             </span>
 <span class="lineNum" id="container153"><a name="153"></a><a href="#153" id="line153">     153</a> </span><span class="lineDeadCode">                :     }                                                                                                                                     </span>
 <span class="lineNum" id="container154"><a name="154"></a><a href="#154" id="line154">     154</a> </span>                :                                                                                                                                           
 <span class="lineNum" id="container155"><a name="155"></a><a href="#155" id="line155">     155</a> </span>                :     public function getOption($name)                                                                                                      
@@ -690,7 +690,7 @@
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
-      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.0.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu3.7</a> and PHPUnit 3.5.15 at Tue Aug 13 13:03:57 CEST 2013.</td></tr>
+      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.0.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu3.7</a> and PHPUnit 3.5.15 at Wed Aug 14 9:34:42 CEST 2013.</td></tr>
     </table>
 
     <br />
@@ -706,98 +706,98 @@
           "footer": ""
         },
         "panel69": {
-          "header": "2 tests cover line 69",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 69",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel70": {
-          "header": "2 tests cover line 70",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 70",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel71": {
-          "header": "2 tests cover line 71",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 71",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel72": {
-          "header": "2 tests cover line 72",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 72",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel73": {
-          "header": "2 tests cover line 73",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 73",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel74": {
-          "header": "2 tests cover line 74",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 74",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel89": {
-          "header": "2 tests cover line 89",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 89",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel90": {
-          "header": "2 tests cover line 90",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 90",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel97": {
-          "header": "2 tests cover line 97",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 97",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel102": {
-          "header": "2 tests cover line 102",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 102",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel110": {
-          "header": "2 tests cover line 110",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 110",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel133": {
-          "header": "2 tests cover line 133",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 133",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel134": {
-          "header": "2 tests cover line 134",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 134",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel135": {
-          "header": "2 tests cover line 135",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 135",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel136": {
-          "header": "2 tests cover line 136",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 136",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel137": {
-          "header": "2 tests cover line 137",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 137",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel139": {
-          "header": "2 tests cover line 139",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 139",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel147": {
-          "header": "2 tests cover line 147",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 147",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel152": {
-          "header": "2 tests cover line 152",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 152",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
       "dummy": ""

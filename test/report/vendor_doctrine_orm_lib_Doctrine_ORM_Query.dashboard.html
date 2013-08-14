@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>vendor/doctrine/orm/lib/Doctrine/ORM/Query</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--[if IE]><script src="excanvas.compressed.js"></script><![endif]-->
+    <script src="RGraph.common.js" ></script>
+    <script src="RGraph.bar.js" ></script>
+    <script src="RGraph.scatter.js" ></script>
+  </head>
+
+  <body>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr><td class="title">vendor/doctrine/orm/lib/Doctrine/ORM/Query</td></tr>
+      <tr><td><div align="center"><p><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query.html">Back to Code Coverage report</a></p></div></td></tr>
+      <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
+    </table>
+
+    <br />
+
+    <center>
+      <table width="90%" cellpadding="2" cellspacing="1" border="0">
+        <tr>
+          <td valign="top">
+            <h2>Class Coverage Distribution</h2>
+            <canvas id="classCoverageDistribution" width="475" height="200"></canvas>
+            <script>
+            var ccd = new RGraph.Bar('classCoverageDistribution', [0,1,2,1,1,1,0,1,1,5,0,1]);
+            ccd.Set('chart.background.barcolor1', 'white');
+            ccd.Set('chart.background.barcolor2', 'white');
+            ccd.Set('chart.colors', ['blue']);
+            ccd.Set('chart.shadow', true);
+            ccd.Set('chart.shadow.offsetx', 3);
+            ccd.Set('chart.shadow.offsety', 3);
+            ccd.Set('chart.labels', ['0%','0-10%','10-20%','20-30%','30-40%','40-50%','50-60%','60-70%','70-80%','80-90%','90-100%','100%']);
+            ccd.Set('chart.text.size', 5);
+            ccd.Draw();
+            </script>
+          </td>
+
+          <td valign="top">
+            <h2>Class Complexity</h2>
+            <canvas id="classComplexity" width="475" height="200"></canvas>
+            <script>
+            var cc = new RGraph.Scatter('classComplexity', [[75,2,"blue","FromClause"],[83.333333333333,2,"blue","IdentificationVariableDeclaration"],[3.2258064516129,9,"blue","Node"],[80,2,"blue","RangeVariableDeclaration"],[80,2,"blue","SelectClause"],[83.333333333333,2,"blue","SelectExpression"],[80,2,"blue","SelectStatement"],[25,3,"blue","AbstractSqlExecutor"],[100,2,"blue","SingleSelectExecutor"],[43.181818181818,28,"blue","Lexer"],[31.460674157303,35,"blue","Parser"],[61.538461538462,8,"blue","ParserResult"],[16.666666666667,34,"blue","ResultSetMapping"],[16.038751345533,336,"blue","SqlWalker"]]);
+            cc.Set('chart.xmax', 100);
+            cc.Set('chart.background.barcolor1', 'white');
+            cc.Set('chart.background.barcolor2', 'white');
+            cc.Set('chart.tickmarks', 'plus');
+            cc.Set('chart.ticksize', 5);
+            cc.Set('chart.text.size', 5);
+            cc.Set('chart.ylabels', false);
+            cc.Draw();
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">
+            <h2>Top Project Risks</h2>
+            <ul>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_SqlWalker.php.html#40">SqlWalker</a> (67157)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_ResultSetMapping.php.html#36">ResultSetMapping</a> (702)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_Parser.php.html#35">Parser</a> (429)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_Lexer.php.html#30">Lexer</a> (171)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_AST_Node.php.html#32">Node</a> (82)</li>
+
+            </ul>
+          </td>
+
+          <td valign="top">
+            <h2>Least Tested Methods</h2>
+            <ul>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_SqlWalker.php.html#976">SqlWalker::walkOrderByItem</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_SqlWalker.php.html#992">SqlWalker::walkHavingClause</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_SqlWalker.php.html#959">SqlWalker::walkOrderByClause</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_SqlWalker.php.html#948">SqlWalker::walkFunction</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_SqlWalker.php.html#809">SqlWalker::walkJoinAssociationDeclaration</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_SqlWalker.php.html#1002">SqlWalker::walkJoin</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_SqlWalker.php.html#1043">SqlWalker::walkCaseExpression</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_SqlWalker.php.html#1129">SqlWalker::walkSimpleCaseExpression</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_SqlWalker.php.html#2073">SqlWalker::walkInputParameter</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_SqlWalker.php.html#1109">SqlWalker::walkGeneralCaseExpression</a> (0%)</li>
+
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </center>
+
+    <br />
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
+      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.0.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu3.7</a> and PHPUnit 3.5.15 at Wed Aug 14 9:34:42 CEST 2013.</td></tr>
+    </table>
+
+    <br/>
+  </body>
+</html>

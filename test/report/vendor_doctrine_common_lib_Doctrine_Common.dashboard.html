@@ -26,7 +26,7 @@
             <h2>Class Coverage Distribution</h2>
             <canvas id="classCoverageDistribution" width="475" height="200"></canvas>
             <script>
-            var ccd = new RGraph.Bar('classCoverageDistribution', [1,2,0,1,2,4,4,2,1,2,1,2]);
+            var ccd = new RGraph.Bar('classCoverageDistribution', [1,4,0,1,2,4,4,2,1,2,1,2]);
             ccd.Set('chart.background.barcolor1', 'white');
             ccd.Set('chart.background.barcolor2', 'white');
             ccd.Set('chart.colors', ['blue']);
@@ -43,7 +43,7 @@
             <h2>Class Complexity</h2>
             <canvas id="classComplexity" width="475" height="200"></canvas>
             <script>
-            var cc = new RGraph.Scatter('classComplexity', [[100,0,"blue","Attribute"],[100,0,"blue","Attributes"],[0,3,"blue","IgnoreAnnotation"],[48,7,"blue","Target"],[41.176470588235,22,"blue","AnnotationReader"],[27.272727272727,15,"blue","AnnotationRegistry"],[46.774193548387,28,"blue","CachedReader"],[90,12,"blue","DocLexer"],[51.219512195122,17,"blue","DocParser"],[47.619047619048,11,"blue","IndexedReader"],[89.473684210526,6,"blue","PhpParser"],[88.888888888889,27,"blue","TokenParser"],[33.333333333333,7,"blue","ArrayCache"],[57.692307692308,20,"blue","CacheProvider"],[5.3571428571429,37,"blue","ClassLoader"],[4,15,"blue","EventManager"],[66.666666666667,26,"blue","Lexer"],[58.947368421053,85,"blue","AbstractClassMetadataFactory"],[67.34693877551,19,"blue","AnnotationDriver"],[50,17,"blue","MappingDriverChain"],[72.727272727273,7,"blue","RuntimeReflectionService"],[33.333333333333,7,"blue","ClassUtils"]]);
+            var cc = new RGraph.Scatter('classComplexity', [[100,0,"blue","Attribute"],[100,0,"blue","Attributes"],[0,3,"blue","IgnoreAnnotation"],[48,7,"blue","Target"],[41.176470588235,22,"blue","AnnotationReader"],[27.272727272727,15,"blue","AnnotationRegistry"],[46.774193548387,28,"blue","CachedReader"],[90,12,"blue","DocLexer"],[51.219512195122,17,"blue","DocParser"],[47.619047619048,11,"blue","IndexedReader"],[89.473684210526,6,"blue","PhpParser"],[88.888888888889,27,"blue","TokenParser"],[33.333333333333,7,"blue","ArrayCache"],[57.692307692308,20,"blue","CacheProvider"],[5.3571428571429,37,"blue","ClassLoader"],[5.6818181818182,51,"blue","ArrayCollection"],[8.3333333333333,6,"blue","Comparison"],[4,15,"blue","EventManager"],[66.666666666667,26,"blue","Lexer"],[58.947368421053,85,"blue","AbstractClassMetadataFactory"],[67.34693877551,19,"blue","AnnotationDriver"],[50,17,"blue","MappingDriverChain"],[72.727272727273,7,"blue","RuntimeReflectionService"],[33.333333333333,7,"blue","ClassUtils"]]);
             cc.Set('chart.xmax', 100);
             cc.Set('chart.background.barcolor1', 'white');
             cc.Set('chart.background.barcolor2', 'white');
@@ -62,8 +62,8 @@
               <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Persistence_Mapping_Driver_AnnotationDriver.php.html#36">AnnotationDriver</a> (31)</li>
               <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Annotations_IndexedReader.php.html#29">IndexedReader</a> (28)</li>
               <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Annotations_TokenParser.php.html#28">TokenParser</a> (28)</li>
-              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Util_ClassUtils.php.html#31">ClassUtils</a> (21)</li>
               <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Cache_ArrayCache.php.html#36">ArrayCache</a> (21)</li>
+              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Util_ClassUtils.php.html#31">ClassUtils</a> (21)</li>
               <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Annotations_Annotation_Target.php.html#31">Target</a> (13)</li>
               <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Annotations_DocLexer.php.html#33">DocLexer</a> (12)</li>
               <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Annotations_Annotation_IgnoreAnnotation.php.html#29">IgnoreAnnotation</a> (12)</li>
@@ -76,16 +76,16 @@
           <td valign="top">
             <h2>Least Tested Methods</h2>
             <ul>
-              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_EventManager.php.html#113">EventManager::removeEventListener</a> (0%)</li>
-              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_EventManager.php.html#132">EventManager::addEventSubscriber</a> (0%)</li>
-              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_EventManager.php.html#95">EventManager::addEventListener</a> (0%)</li>
-              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_EventManager.php.html#73">EventManager::getListeners</a> (0%)</li>
+              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Collections_ArrayCollection.php.html#434">ArrayCollection::__toString</a> (0%)</li>
+              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Collections_ArrayCollection.php.html#442">ArrayCollection::clear</a> (0%)</li>
+              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Collections_ArrayCollection.php.html#458">ArrayCollection::slice</a> (0%)</li>
+              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Collections_ArrayCollection.php.html#416">ArrayCollection::partition</a> (0%)</li>
+              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Collections_ArrayCollection.php.html#396">ArrayCollection::forAll</a> (0%)</li>
+              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Collections_ArrayCollection.php.html#372">ArrayCollection::map</a> (0%)</li>
+              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Collections_ArrayCollection.php.html#384">ArrayCollection::filter</a> (0%)</li>
+              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Collections_ArrayCollection.php.html#470">ArrayCollection::matching</a> (0%)</li>
+              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Collections_Expr_Comparison.php.html#44">Comparison::__construct</a> (0%)</li>
               <li><a href="vendor_doctrine_common_lib_Doctrine_Common_EventManager.php.html#56">EventManager::dispatchEvent</a> (0%)</li>
-              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_EventManager.php.html#143">EventManager::removeEventSubscriber</a> (0%)</li>
-              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Lexer.php.html#87">Lexer::resetPeek</a> (0%)</li>
-              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Lexer.php.html#230">Lexer::getLiteral</a> (0%)</li>
-              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Lexer.php.html#164">Lexer::isA</a> (0%)</li>
-              <li><a href="vendor_doctrine_common_lib_Doctrine_Common_Lexer.php.html#150">Lexer::skipUntil</a> (0%)</li>
 
             </ul>
           </td>
@@ -97,7 +97,7 @@
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
-      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.0.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu3.7</a> and PHPUnit 3.5.15 at Tue Aug 13 13:03:57 CEST 2013.</td></tr>
+      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.0.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu3.7</a> and PHPUnit 3.5.15 at Wed Aug 14 9:34:42 CEST 2013.</td></tr>
     </table>
 
     <br/>

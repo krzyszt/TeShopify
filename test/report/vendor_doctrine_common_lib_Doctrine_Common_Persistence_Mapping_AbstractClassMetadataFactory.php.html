@@ -697,17 +697,17 @@
 <span class="lineNum" id="container102"><a name="102"></a><a href="#102" id="line102">     102</a> </span>                :      */                                                                                                           
 <span class="lineNum" id="container103"><a name="103"></a><a href="#103" id="line103">     103</a> </span>                :     public function getAllMetadata()                                                                              
 <span class="lineNum" id="container104"><a name="104"></a><a href="#104" id="line104">     104</a> </span>                :     {                                                                                                             
-<span class="lineNum" id="container105"><a name="105"></a><a href="#105" id="line105">     105</a> </span><span class="lineCov">              2 :         if ( ! $this-&gt;initialized) {                                                                              </span>
+<span class="lineNum" id="container105"><a name="105"></a><a href="#105" id="line105">     105</a> </span><span class="lineCov">              3 :         if ( ! $this-&gt;initialized) {                                                                              </span>
 <span class="lineNum" id="container106"><a name="106"></a><a href="#106" id="line106">     106</a> </span><span class="lineCov">              1 :             $this-&gt;initialize();                                                                                  </span>
 <span class="lineNum" id="container107"><a name="107"></a><a href="#107" id="line107">     107</a> </span><span class="lineCov">              1 :         }                                                                                                         </span>
 <span class="lineNum" id="container108"><a name="108"></a><a href="#108" id="line108">     108</a> </span>                :                                                                                                                   
-<span class="lineNum" id="container109"><a name="109"></a><a href="#109" id="line109">     109</a> </span><span class="lineCov">              2 :         $driver = $this-&gt;getDriver();                                                                             </span>
-<span class="lineNum" id="container110"><a name="110"></a><a href="#110" id="line110">     110</a> </span><span class="lineCov">              2 :         $metadata = array();                                                                                      </span>
-<span class="lineNum" id="container111"><a name="111"></a><a href="#111" id="line111">     111</a> </span><span class="lineCov">              2 :         foreach ($driver-&gt;getAllClassNames() as $className) {                                                     </span>
-<span class="lineNum" id="container112"><a name="112"></a><a href="#112" id="line112">     112</a> </span><span class="lineCov">              2 :             $metadata[] = $this-&gt;getMetadataFor($className);                                                      </span>
-<span class="lineNum" id="container113"><a name="113"></a><a href="#113" id="line113">     113</a> </span><span class="lineCov">              2 :         }                                                                                                         </span>
+<span class="lineNum" id="container109"><a name="109"></a><a href="#109" id="line109">     109</a> </span><span class="lineCov">              3 :         $driver = $this-&gt;getDriver();                                                                             </span>
+<span class="lineNum" id="container110"><a name="110"></a><a href="#110" id="line110">     110</a> </span><span class="lineCov">              3 :         $metadata = array();                                                                                      </span>
+<span class="lineNum" id="container111"><a name="111"></a><a href="#111" id="line111">     111</a> </span><span class="lineCov">              3 :         foreach ($driver-&gt;getAllClassNames() as $className) {                                                     </span>
+<span class="lineNum" id="container112"><a name="112"></a><a href="#112" id="line112">     112</a> </span><span class="lineCov">              3 :             $metadata[] = $this-&gt;getMetadataFor($className);                                                      </span>
+<span class="lineNum" id="container113"><a name="113"></a><a href="#113" id="line113">     113</a> </span><span class="lineCov">              3 :         }                                                                                                         </span>
 <span class="lineNum" id="container114"><a name="114"></a><a href="#114" id="line114">     114</a> </span>                :                                                                                                                   
-<span class="lineNum" id="container115"><a name="115"></a><a href="#115" id="line115">     115</a> </span><span class="lineCov">              2 :         return $metadata;                                                                                         </span>
+<span class="lineNum" id="container115"><a name="115"></a><a href="#115" id="line115">     115</a> </span><span class="lineCov">              3 :         return $metadata;                                                                                         </span>
 <span class="lineNum" id="container116"><a name="116"></a><a href="#116" id="line116">     116</a> </span><span class="lineDeadCode">                :     }                                                                                                             </span>
 <span class="lineNum" id="container117"><a name="117"></a><a href="#117" id="line117">     117</a> </span>                :                                                                                                                   
 <span class="lineNum" id="container118"><a name="118"></a><a href="#118" id="line118">     118</a> </span>                :     /**                                                                                                           
@@ -771,8 +771,8 @@
 <span class="lineNum" id="container176"><a name="176"></a><a href="#176" id="line176">     176</a> </span>                :      */                                                                                                           
 <span class="lineNum" id="container177"><a name="177"></a><a href="#177" id="line177">     177</a> </span>                :     public function getMetadataFor($className)                                                                    
 <span class="lineNum" id="container178"><a name="178"></a><a href="#178" id="line178">     178</a> </span>                :     {                                                                                                             
-<span class="lineNum" id="container179"><a name="179"></a><a href="#179" id="line179">     179</a> </span><span class="lineCov">              2 :         if (isset($this-&gt;loadedMetadata[$className])) {                                                           </span>
-<span class="lineNum" id="container180"><a name="180"></a><a href="#180" id="line180">     180</a> </span><span class="lineCov">              2 :             return $this-&gt;loadedMetadata[$className];                                                             </span>
+<span class="lineNum" id="container179"><a name="179"></a><a href="#179" id="line179">     179</a> </span><span class="lineCov">              3 :         if (isset($this-&gt;loadedMetadata[$className])) {                                                           </span>
+<span class="lineNum" id="container180"><a name="180"></a><a href="#180" id="line180">     180</a> </span><span class="lineCov">              3 :             return $this-&gt;loadedMetadata[$className];                                                             </span>
 <span class="lineNum" id="container181"><a name="181"></a><a href="#181" id="line181">     181</a> </span><span class="lineDeadCode">                :         }                                                                                                         </span>
 <span class="lineNum" id="container182"><a name="182"></a><a href="#182" id="line182">     182</a> </span>                :                                                                                                                   
 <span class="lineNum" id="container183"><a name="183"></a><a href="#183" id="line183">     183</a> </span><span class="lineCov">              1 :         $realClassName = $className;                                                                              </span>
@@ -984,7 +984,7 @@
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
-      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.0.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu3.7</a> and PHPUnit 3.5.15 at Tue Aug 13 13:03:57 CEST 2013.</td></tr>
+      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.0.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu3.7</a> and PHPUnit 3.5.15 at Wed Aug 14 9:34:42 CEST 2013.</td></tr>
     </table>
 
     <br />
@@ -995,8 +995,8 @@
       YAHOO.namespace("phpunit.container");
       YAHOO.phpunit.container.panelsData = {
         "panel105": {
-          "header": "2 tests cover line 105",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 105",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel106": {
@@ -1010,43 +1010,43 @@
           "footer": ""
         },
         "panel109": {
-          "header": "2 tests cover line 109",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 109",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel110": {
-          "header": "2 tests cover line 110",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 110",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel111": {
-          "header": "2 tests cover line 111",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 111",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel112": {
-          "header": "2 tests cover line 112",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 112",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel113": {
-          "header": "2 tests cover line 113",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 113",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel115": {
-          "header": "2 tests cover line 115",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 115",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel179": {
-          "header": "2 tests cover line 179",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 179",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel180": {
-          "header": "2 tests cover line 180",
-          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
+          "header": "3 tests cover line 180",
+          "body": "<ul><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testcanCreatewebservice</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testCanSetWebserviceAndRetriveIt</li><li class=\"testPassed\">TeShopifyTest\\Entity\\WebserviceTest::testInitial</li></ul>",
           "footer": ""
         },
         "panel183": {

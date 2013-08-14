@@ -26,7 +26,7 @@
             <h2>Class Coverage Distribution</h2>
             <canvas id="classCoverageDistribution" width="475" height="200"></canvas>
             <script>
-            var ccd = new RGraph.Bar('classCoverageDistribution', [2,3,0,3,1,1,3,1,0,0,0,9]);
+            var ccd = new RGraph.Bar('classCoverageDistribution', [1,3,6,6,3,3,3,1,1,5,0,11]);
             ccd.Set('chart.background.barcolor1', 'white');
             ccd.Set('chart.background.barcolor2', 'white');
             ccd.Set('chart.colors', ['blue']);
@@ -43,7 +43,7 @@
             <h2>Class Complexity</h2>
             <canvas id="classComplexity" width="475" height="200"></canvas>
             <script>
-            var cc = new RGraph.Scatter('classComplexity', [[7.5342465753425,77,"blue","Configuration"],[2.283105022831,94,"blue","EntityManager"],[50,1,"blue","Events"],[50,2,"blue","AbstractIdGenerator"],[6.25,5,"blue","AssignedGenerator"],[60,3,"blue","IdentityGenerator"],[100,0,"blue","ClassMetadata"],[23.387096774194,100,"blue","ClassMetadataFactory"],[22.900763358779,380,"blue","ClassMetadataInfo"],[100,0,"blue","Column"],[54.545454545455,8,"blue","DefaultNamingStrategy"],[33.333333333333,19,"blue","DefaultQuoteStrategy"],[27.272727272727,93,"blue","AnnotationDriver"],[100,0,"blue","Entity"],[100,0,"blue","GeneratedValue"],[100,0,"blue","Id"],[100,0,"blue","ManyToOne"],[100,0,"blue","OneToMany"],[100,0,"blue","Table"],[0,47,"blue","ProxyFactory"],[46.458923512748,131,"blue","SchemaTool"],[100,0,"blue","ToolEvents"],[0,455,"blue","UnitOfWork"]]);
+            var cc = new RGraph.Scatter('classComplexity', [[11.979166666667,87,"blue","AbstractQuery"],[9.5890410958904,77,"blue","Configuration"],[12.328767123288,94,"blue","EntityManager"],[50,1,"blue","Events"],[50,2,"blue","AbstractIdGenerator"],[6.25,5,"blue","AssignedGenerator"],[100,3,"blue","IdentityGenerator"],[20.588235294118,14,"blue","CommitOrderCalculator"],[30.215827338129,54,"blue","AbstractHydrator"],[24.809160305344,83,"blue","ObjectHydrator"],[100,0,"blue","ClassMetadata"],[23.387096774194,100,"blue","ClassMetadataFactory"],[23.409669211196,380,"blue","ClassMetadataInfo"],[100,0,"blue","Column"],[54.545454545455,8,"blue","DefaultNamingStrategy"],[43.589743589744,19,"blue","DefaultQuoteStrategy"],[27.272727272727,93,"blue","AnnotationDriver"],[100,0,"blue","Entity"],[100,0,"blue","GeneratedValue"],[100,0,"blue","Id"],[100,0,"blue","ManyToOne"],[100,0,"blue","OneToMany"],[100,0,"blue","Table"],[10.699001426534,234,"blue","BasicEntityPersister"],[0,47,"blue","ProxyFactory"],[37.39837398374,52,"blue","Query"],[75,2,"blue","FromClause"],[83.333333333333,2,"blue","IdentificationVariableDeclaration"],[3.2258064516129,9,"blue","Node"],[80,2,"blue","RangeVariableDeclaration"],[80,2,"blue","SelectClause"],[83.333333333333,2,"blue","SelectExpression"],[80,2,"blue","SelectStatement"],[25,3,"blue","AbstractSqlExecutor"],[100,2,"blue","SingleSelectExecutor"],[43.181818181818,28,"blue","Lexer"],[31.460674157303,35,"blue","Parser"],[61.538461538462,8,"blue","ParserResult"],[16.666666666667,34,"blue","ResultSetMapping"],[16.038751345533,336,"blue","SqlWalker"],[46.458923512748,131,"blue","SchemaTool"],[100,0,"blue","ToolEvents"],[15.822784810127,455,"blue","UnitOfWork"]]);
             cc.Set('chart.xmax', 100);
             cc.Set('chart.background.barcolor1', 'white');
             cc.Set('chart.background.barcolor2', 'white');
@@ -59,14 +59,14 @@
           <td valign="top">
             <h2>Top Project Risks</h2>
             <ul>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Mapping_ClassMetadataInfo.php.html#48">ClassMetadataInfo</a> (66558)</li>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_EntityManager.php.html#42">EntityManager</a> (8338)</li>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Configuration.php.html#46">Configuration</a> (4764)</li>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Mapping_ClassMetadataFactory.php.html#45">ClassMetadataFactory</a> (4596)</li>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Mapping_Driver_AnnotationDriver.php.html#38">AnnotationDriver</a> (3420)</li>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Tools_SchemaTool.php.html#44">SchemaTool</a> (2764)</li>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Proxy_ProxyFactory.php.html#33">ProxyFactory</a> (2256)</li>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Mapping_DefaultQuoteStrategy.php.html#31">DefaultQuoteStrategy</a> (125)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Internal_Hydration_AbstractHydrator.php.html#38">AbstractHydrator</a> (1044)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query.php.html#38">Query</a> (715)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_ResultSetMapping.php.html#36">ResultSetMapping</a> (702)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_Parser.php.html#35">Parser</a> (429)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_Lexer.php.html#30">Lexer</a> (171)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Internal_CommitOrderCalculator.php.html#30">CommitOrderCalculator</a> (112)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Mapping_DefaultQuoteStrategy.php.html#31">DefaultQuoteStrategy</a> (83)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_AST_Node.php.html#32">Node</a> (82)</li>
               <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Id_AssignedGenerator.php.html#34">AssignedGenerator</a> (25)</li>
               <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Mapping_DefaultNamingStrategy.php.html#31">DefaultNamingStrategy</a> (14)</li>
 
@@ -76,16 +76,16 @@
           <td valign="top">
             <h2>Least Tested Methods</h2>
             <ul>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Mapping_DefaultQuoteStrategy.php.html#86">DefaultQuoteStrategy::getJoinTableName</a> (0%)</li>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Mapping_DefaultQuoteStrategy.php.html#56">DefaultQuoteStrategy::getSequenceName</a> (0%)</li>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Mapping_DefaultNamingStrategy.php.html#81">DefaultNamingStrategy::joinKeyColumnName</a> (0%)</li>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Mapping_DefaultQuoteStrategy.php.html#96">DefaultQuoteStrategy::getIdentifierColumnNames</a> (0%)</li>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Mapping_DefaultQuoteStrategy.php.html#110">DefaultQuoteStrategy::anonymous function</a> (0%)</li>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Mapping_Driver_AnnotationDriver.php.html#547">AnnotationDriver::create</a> (0%)</li>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Mapping_Driver_AnnotationDriver.php.html#494">AnnotationDriver::joinColumnToArray</a> (0%)</li>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Mapping_DefaultQuoteStrategy.php.html#128">DefaultQuoteStrategy::getColumnAlias</a> (0%)</li>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Mapping_DefaultNamingStrategy.php.html#72">DefaultNamingStrategy::joinTableName</a> (0%)</li>
-              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Mapping_ClassMetadataInfo.php.html#2810">ClassMetadataInfo::getAssociationsByTargetClass</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_AST_SelectExpression.php.html#46">SelectExpression::dispatch</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_AST_SelectStatement.php.html#46">SelectStatement::dispatch</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_AST_SelectClause.php.html#43">SelectClause::dispatch</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_AST_RangeVariableDeclaration.php.html#43">RangeVariableDeclaration::dispatch</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_AST_Node.php.html#51">Node::__toString</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_AST_Node.php.html#56">Node::dump</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_Exec_AbstractSqlExecutor.php.html#51">AbstractSqlExecutor::getSqlStatements</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_Exec_AbstractSqlExecutor.php.html#56">AbstractSqlExecutor::setQueryCacheProfile</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_Parser.php.html#204">Parser::getParserResult</a> (0%)</li>
+              <li><a href="vendor_doctrine_orm_lib_Doctrine_ORM_Query_Parser.php.html#214">Parser::getEntityManager</a> (0%)</li>
 
             </ul>
           </td>
@@ -97,7 +97,7 @@
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
-      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.0.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu3.7</a> and PHPUnit 3.5.15 at Tue Aug 13 13:03:57 CEST 2013.</td></tr>
+      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.0.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu3.7</a> and PHPUnit 3.5.15 at Wed Aug 14 9:34:42 CEST 2013.</td></tr>
     </table>
 
     <br/>
