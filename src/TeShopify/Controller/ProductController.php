@@ -39,6 +39,26 @@ class ProductController extends AbstractActionController {
         ));
         return $result;
     }
+    
+    public function createAction(){
+        if ($this->request->isPost()){
+            $data = $this->request->getPost();
+            $product = new Product();
+            $product->setTitle($data['title']);
+            $product->setHandle($data['handle']);
+            $product->setBodyHtml($data['body_html']);
+            $product->setProductType($data['product_type']);
+            $product->setVendor($data['vendor']);
+            
+            $this->getEntityManager()->persist($product);
+            $this->getEntityManager()->flush();
+            $result = new JsonModel(array(
+                'msg'=>'Product created',
+                'success' => true
+            ));
+            return $result;
+        }
+    }
 
     
 

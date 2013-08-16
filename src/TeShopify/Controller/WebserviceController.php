@@ -5,7 +5,8 @@ namespace TeShopify\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\JsonModel,
     Doctrine\ORM\EntityManager,
-    TeShopify\Entity\Webservice;
+    TeShopify\Entity\Webservice,
+    TeShopify\Service\Webservice as WebserviceServ;
 
 class WebserviceController extends AbstractActionController {
 
@@ -43,22 +44,40 @@ class WebserviceController extends AbstractActionController {
     public function createAction() {
         if ($this->getRequest()->isPost()) {
             $data = $this->getRequest()->getPost();
-            $webservice = new Webservice();
-            $webservice->setCreatedAt(new \DateTime("now"));
-            $webservice->setName($data['name']);
-            $webservice->setDescription($data['description']);
-            $webservice->setUri($data['uri']);
-            $webservice->setApikey($data['apikey']);
-            $webservice->setSharedsecret($data['sharedsecret']);
-            $webservice->setIssync(0);
-            $webservice->setLeaf(true);
-            $this->getEntityManager()->persist($webservice);
-            $this->getEntityManager()->flush();
-            $result = new JsonModel(array(
-                'msg' => 'Shop created',
-                'success' => true,
-            ));
-            return $result;
+            try {
+                $webservice = new Webservice();
+                $webserviceServ = new WebserviceServ();
+                $inputFilter = $webserviceServ->getInputFilter();
+                $inputFilter->setData($data);
+                if ($inputFilter->isValid()) {
+                    $webservice->setName($data['name']);
+                    $webservice->setDescription($data['description']);
+                    $webservice->setUri($data['uri']);
+                    $webservice->setApikey($data['apikey']);
+                    $webservice->setSharedsecret($data['sharedsecret']);
+                    $webservice->setIssync(0);
+                    $webservice->setLeaf(true);
+                    $this->getEntityManager()->persist($webservice);
+                    $this->getEntityManager()->flush();
+                    $result = new JsonModel(array(
+                        'msg' => 'Shop created',
+                        'success' => true,
+                    ));
+                    return $result;
+                } else {
+                    $result = new JsonModel(array(
+                        'msg' => 'Invalid form.',
+                        'success' => false,
+                    ));
+                    return $result;
+                }
+            } catch (\Exception $ex) {
+                $result = new JsonModel(array(
+                    'msg' => 'Application error. Please try again later. ',
+                    'success' => false,
+                ));
+                return $result;
+            }
         }
     }
 
@@ -82,21 +101,41 @@ class WebserviceController extends AbstractActionController {
                 ));
                 return $result;
             }
-            $webservice->setUpdatedAt(new \DateTime("now"));
-            $webservice->setName($data['name']);
-            $webservice->setDescription($data['description']);
-            $webservice->setUri($data['uri']);
-            $webservice->setApikey($data['apikey']);
-            $webservice->setSharedsecret($data['sharedsecret']);
-            $webservice->setIssync(0);
-            $webservice->setLeaf(true);
-            $this->getEntityManager()->persist($webservice);
-            $this->getEntityManager()->flush();
-            $result = new JsonModel(array(
-                'msg' => 'Shopify Shop updated.',
-                'success' => true,
-            ));
-            return $result;
+            try {
+                $webserviceServ = new WebserviceServ();
+                $inputFilter = $webserviceServ->getInputFilter();
+                $inputFilter->setData($data);
+                if ($inputFilter->isValid()) {
+                    $webservice->setUpdatedAt(new \DateTime("now"));
+                    $webservice->setName($data['name']);
+                    $webservice->setDescription($data['description']);
+                    $webservice->setUri($data['uri']);
+                    $webservice->setApikey($data['apikey']);
+                    $webservice->setSharedsecret($data['sharedsecret']);
+                    $webservice->setIssync(0);
+                    $webservice->setLeaf(true);
+                    $this->getEntityManager()->persist($webservice);
+                    $this->getEntityManager()->flush();
+                    $result = new JsonModel(array(
+                        'data' => $data,
+                        'msg' => 'Shopify Shop updated.',
+                        'success' => true,
+                    ));
+                    return $result;
+                } else {
+                    $result = new JsonModel(array(
+                        'msg' => 'Invalid form.',
+                        'success' => false,
+                    ));
+                    return $result;
+                }
+            } catch (\Exception $ex) {
+                $result = new JsonModel(array(
+                    'msg' => 'getInputFilter exception',
+                    'success' => false,
+                ));
+                return $result;
+            }
         }
     }
 
