@@ -5,7 +5,8 @@ namespace TeShopify\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\JsonModel,
     Doctrine\ORM\EntityManager,
-    TeShopify\Entity\Product;
+    TeShopify\Entity\Product,
+    TeShopify\Service\Product as ProductService;
 
 class ProductController extends AbstractActionController {
 
@@ -34,35 +35,49 @@ class ProductController extends AbstractActionController {
             $data[] = $object->getArrayCopy();
         }
         $result = new JsonModel(array(
-            'children' => $data,
+            'data' => $data,
             'success' => true,
         ));
         return $result;
     }
-    
-    public function createAction(){
-        if ($this->request->isPost()){
+
+    public function createAction() {
+        if ($this->request->isPost()) {
             $data = $this->request->getPost();
-            $product = new Product();
-            $product->setTitle($data['title']);
-            $product->setHandle($data['handle']);
-            $product->setBodyHtml($data['body_html']);
-            $product->setProductType($data['product_type']);
-            $product->setVendor($data['vendor']);
-            
-            $this->getEntityManager()->persist($product);
-            $this->getEntityManager()->flush();
-            $result = new JsonModel(array(
-                'msg'=>'Product created',
-                'success' => true
-            ));
-            return $result;
+            try {
+                $product = new Product();
+                $productService = new ProductService();
+                $inputFilter = $productService->getInputFilter();
+                $inputFilter->setData($data);
+                if ($inputFilter->isValid()) {
+                    $product->setTitle($data['title']);
+                    $product->setHandle($data['handle']);
+                    $product->setBodyHtml($data['body_html']);
+                    $product->setProductType($data['product_type']);
+                    $product->setVendor($data['vendor']);
+                    $this->getEntityManager()->persist($product);
+                    $this->getEntityManager()->flush();
+                    $result = new JsonModel(array(
+                        'msg' => 'Product created',
+                        'success' => true
+                    ));
+                    return $result;
+                } else {
+                    $result = new JsonModel(array(
+                        'msg' => 'Invalid form.',
+                        'success' => false,
+                    ));
+                    return $result;
+                }
+            } catch (\Exception $ex) {
+                $result = new JsonModel(array(
+                    'msg' => 'Application error. Please try again later. ',
+                    'success' => false,
+                ));
+                return $result;
+            }
         }
     }
-
-    
-
-    
 
 }
 
