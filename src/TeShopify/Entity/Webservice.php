@@ -53,6 +53,11 @@ class Webservice {
     protected $sharedsecret;
     
     /**
+     * @ORM\Column(type="string")
+     */
+    protected $password;
+    
+    /**
      * @ORM\Column(type="date", nullable=true)
      */
     protected $syncdate;
@@ -88,6 +93,7 @@ class Webservice {
         $this->uri = $data['uri'];
         $this->apikey = $data['apikey'];
         $this->sharedsecret = $data['sharedsecret'];
+        $this->password = $data['password'];
         $this->syncdate = $data['syncdate'];
         $this->synctime = $data['synctime'];
         $this->issync = $data['issync'];
@@ -369,5 +375,28 @@ class Webservice {
     public function getLeaf()
     {
         return $this->leaf;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     * @return Webservice
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string 
+     */
+    public function getPassword()
+    {
+        return $this->password;
     }
 }

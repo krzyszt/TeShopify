@@ -55,6 +55,7 @@ class WebserviceController extends AbstractActionController {
                     $webservice->setUri($data['uri']);
                     $webservice->setApikey($data['apikey']);
                     $webservice->setSharedsecret($data['sharedsecret']);
+                    $webservice->setPassword($data['password']);
                     $webservice->setIssync(0);
                     $webservice->setLeaf(true);
                     $this->getEntityManager()->persist($webservice);

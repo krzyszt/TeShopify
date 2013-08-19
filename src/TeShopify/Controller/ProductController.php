@@ -78,7 +78,7 @@ class ProductController extends AbstractActionController {
             }
         }
     }
-    
+
     public function updateAction() {
         if ($this->request->isPost()) {
             $data = $this->request->getPost();
@@ -130,6 +130,27 @@ class ProductController extends AbstractActionController {
                 ));
                 return $result;
             }
+        }
+    }
+
+    public function listonlineAction() {
+//        passing service is in order to get shopify_client_config info
+        $service_id = (int) $this->_getParam('service_id');
+        if (!$service_id) {
+            $result = new JsonModel(array(
+                'msg' => 'Please select a shopify shop.',
+                'success' => false,
+            ));
+            return $result;
+        }
+        try {
+            $webservice = $this->getEntityManager()->find('TeShopify\Entity\Webservice', $service_id);
+        } catch (\Exception $ex) {
+            $result = new JsonModel(array(
+                'msg' => 'Application error. Please try again later. ',
+                'success' => false,
+            ));
+            return $result;
         }
     }
 

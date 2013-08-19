@@ -41,6 +41,8 @@ class WebserviceTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals('123456789', $w->getApikey());
         $this->assertEquals('987654321', $result['sharedsecret'] );
         $this->assertEquals('987654321', $w->getSharedsecret());
+        $this->assertEquals('1290', $result['password'] );
+        $this->assertEquals('1290', $w->getPassword());
         $this->assertEquals('1', $result['issync'] );
         $this->assertEquals('1', $w->getIssync());
         $this->assertTrue($result['leaf']);
@@ -55,6 +57,7 @@ class WebserviceTest extends \PHPUnit_Framework_TestCase {
         $w->setUri('www.myserviceuri.com');
         $w->setApikey('123456789');
         $w->setSharedsecret('987654321');
+        $w->setPassword('1290');
         $w->setIssync(1);
         $w->setLeaf(TRUE);
         return $w;
