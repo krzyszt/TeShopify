@@ -6,7 +6,11 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\JsonModel,
     Doctrine\ORM\EntityManager,
     TeShopify\Entity\Product,
-    TeShopify\Service\Product as ProductService;
+    TeShopify\Service\Product as ProductService,
+    TeShopify\Entity\Webservice,
+    TeShopify\Service\Webservice as WebserviceServ,
+    Zend\Http\Client,
+    Zend\Http\Request;
 
 class ProductController extends AbstractActionController {
 
@@ -134,20 +138,71 @@ class ProductController extends AbstractActionController {
     }
 
     public function listonlineAction() {
+
 //        passing service is in order to get shopify_client_config info
-        $service_id = (int) $this->_getParam('service_id');
-        if (!$service_id) {
+        if ($this->getRequest()->isGet()) {
+            $id = (int) $this->getRequest()->getQuery()->id;
+            if (!$id) {
+                $result = new JsonModel(array(
+                    'msg' => 'Please select a shopify shop.',
+                    'success' => false,
+                ));
+                return $result;
+            }
+            try {
+                $webservice = $this->getEntityManager()->find('TeShopify\Entity\Webservice', $id);
+            } catch (\Exception $ex) {
+                $result = new JsonModel(array(
+                    'msg' => 'Application error. Please try again later. ',
+                    'success' => false,
+                ));
+                return $result;
+            }
+//            $uri = 'https://jakubowski-brakus6215.myshopify.com/admin/products.json';
+            $uri = 'https://' . $webservice->getUri() .'/admin/products.json';
+
+//            $client->setUri($uri);
+            try {
+                $request = new Request();
+                $request->setUri($uri);
+                $config = array(
+                    'adapter' => 'Zend\Http\Client\Adapter\Socket',
+                    'sslverifypeer' => false
+                );
+                $client = new Client();
+                $client->setOptions($config);
+                $client->setAuth($webservice->getApikey(), $webservice->getPassword());
+                $response = $client->dispatch($request);
+                if ($response->isSuccess()) {
+                    $list = json_decode($response->getBody(), true);
+                    foreach ($list['products'] as &$value) {
+                        foreach ($value as &$item) {
+                            $item = html_entity_decode($item);
+                        }
+                    }
+                    $result = new JsonModel(array(
+                        'data' => $list['products'],
+                        'msg' => 'success',
+                    ));
+                    return $result;
+                } else {
+                    $result = new JsonModel(array(
+                        'response' => $response->toString(),
+                        'request' => $request->toString(),
+                        'msg' => 'failed',
+                    ));
+                    return $result;
+                }
+            } catch (\Exception $ex) {
+                $result = new JsonModel(array(
+                    'msg' => $ex,
+                    'success' => false,
+                ));
+                return $result;
+            }
+        } else {
             $result = new JsonModel(array(
-                'msg' => 'Please select a shopify shop.',
-                'success' => false,
-            ));
-            return $result;
-        }
-        try {
-            $webservice = $this->getEntityManager()->find('TeShopify\Entity\Webservice', $service_id);
-        } catch (\Exception $ex) {
-            $result = new JsonModel(array(
-                'msg' => 'Application error. Please try again later. ',
+                'msg' => 'Invalid method',
                 'success' => false,
             ));
             return $result;
