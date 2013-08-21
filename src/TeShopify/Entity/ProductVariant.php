@@ -524,7 +524,6 @@ class ProductVariant
 
     public function populate($data = array()) {
         $this->id = $data['id'];
-        $this->created_at = $data['created_at'];
         $this->updated_at = $data['updated_at'];
         $this->compare_at_price = $data['compare_at_price'];
         $this->fulfillment_service = $data['fulfillment_service'];
@@ -536,7 +535,6 @@ class ProductVariant
         $this->option = $data['option'];
         $this->position = $data['position'];
         $this->price = $data['price'];
-        $this->product = $data['product'];
         $this->requires_shipping = $data['requires_shipping'];
         $this->sku = $data['sku'];
         $this->taxable = $data['taxable'];
