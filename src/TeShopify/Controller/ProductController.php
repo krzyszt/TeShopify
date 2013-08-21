@@ -47,7 +47,8 @@ class ProductController extends AbstractActionController {
 
     public function createAction() {
         if ($this->request->isPost()) {
-            $data = $this->request->getPost();
+            $rawData = $this->request->getContent();
+            $data = json_decode($rawData, true);
             try {
                 $product = new Product();
                 $productService = new ProductService();
@@ -85,7 +86,8 @@ class ProductController extends AbstractActionController {
 
     public function updateAction() {
         if ($this->request->isPost()) {
-            $data = $this->request->getPost();
+            $rawData = $this->request->getContent();
+            $data = json_decode($rawData, true);
             $id = (int) $data['id'];
             if (!$id) {
                 $result = new JsonModel(array(
