@@ -159,6 +159,5 @@ class VariantController extends AbstractActionController {
             }
         }
     }
-
 }
 
