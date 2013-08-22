@@ -5,7 +5,7 @@ namespace TeShopifyTest\Entity;
 use TeShopifyTest\Bootstrap;
 use TeShopify\Entity\Option;
 
-class ProductOptionTest extends \PHPUnit_Framework_TestCase {
+class OptionTest extends \PHPUnit_Framework_TestCase {
 
     protected function setUp() {
         $em = Bootstrap::getEntityManager();
@@ -48,7 +48,26 @@ class ProductOptionTest extends \PHPUnit_Framework_TestCase {
         $em->detach($ent);
     }
     
-    private function getTestOption() {
+    public function testCanPopulateOptionAndRetiveIt(){
+        $data = array();
+        $data['updated_at']= new \DateTime(date('2013-10-28 11:29:29'));
+        $data['shopify_id'] = 10999888;
+        $data['name'] = 'TestSize';
+        $data['code'] = 'TestCodeSize';
+        $data['values'] = array(12,15,19);
+        $ent = new Option();
+        $ent->populate($data);
+        $em = Bootstrap::getEntityManager();
+        $em->persist($ent);
+        $em->flush();
+        $query = $em->createQuery("SELECT o FROM TeShopify\Entity\Option o WHERE o.code='TestCodeSize'");
+        $result = $query->getResult();
+        $this->assertEquals(1, count($result));
+        $this->assertEquals('TestSize', $result[0]->getName());
+        $this->assertEquals('TestCodeSize', $result[0]->getCode());
+    }
+
+        private function getTestOption() {
         $ent = new Option();
         $ent->setName('TestOption');
         $ent->setCreatedAt(new \DateTime("now"));

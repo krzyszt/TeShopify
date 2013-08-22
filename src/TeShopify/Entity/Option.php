@@ -56,7 +56,6 @@ class Option {
     }
 
     public function populate($data = array()) {
-        $this->id = $data['id'];
         $this->updated_at = $data['updated_at'];
         $this->shopify_id = $data['shopify_id'];
         $this->name = $data['name'];
