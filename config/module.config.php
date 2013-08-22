@@ -5,6 +5,7 @@ return array(
             'TeShopify\Controller\Index' => 'TeShopify\Controller\IndexController',
             'TeShopify\Controller\Webservice' => 'TeShopify\Controller\WebserviceController',
             'TeShopify\Controller\Product' => 'TeShopify\Controller\ProductController',
+            'TeShopify\Controller\Option' => 'TeShopify\Controller\OptionController',
         ),
     ),
     'router' => array(

@@ -43,7 +43,7 @@ class OptionController extends AbstractActionController {
         return $result;
     }
 
-    public function createAction() {
+    public function addAction() {
         if ($this->request->isPost()) {
             $data = $this->request->getPost();
             try {
@@ -77,7 +77,7 @@ class OptionController extends AbstractActionController {
         }
     }
 
-    public function updateAction() {
+    public function editAction() {
         if ($this->request->isPost()) {
             $data = $this->request->getPost();
             $id = (int) $data['id'];
