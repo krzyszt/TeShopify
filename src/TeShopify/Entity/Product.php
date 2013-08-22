@@ -71,11 +71,6 @@ class Product {
     /**
      * @ORM\Column(type="array", nullable=true)
      */
-    protected $options;
-
-    /**
-     * @ORM\Column(type="array", nullable=true)
-     */
     protected $tags;
 
     /**
@@ -84,9 +79,14 @@ class Product {
     protected $images;
 
     /**
-     * @ORM\OneToMany(targetEntity="ProductVariant", mappedBy="product")
+     * @ORM\OneToMany(targetEntity="ProductVariant", mappedBy="product", cascade={"persist", "remove"})
      */
     protected $variants;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="ProductOption", mappedBy="product", cascade={"persist", "remove"})
+     */
+    protected $options;
 
     public function __construct() {
         $this->images = new ArrayCollection();
@@ -100,7 +100,6 @@ class Product {
 
     public function populate($data = array()) {
         $this->id = $data['id'];
-        $this->created_at = $data['created_at'];
         $this->updated_at = $data['updated_at'];
         $this->published_at = $data['published_at'];
         $this->body_html = $data['body_html'];
@@ -478,5 +477,28 @@ class Product {
     public function getVariants()
     {
         return $this->variants;
+    }
+
+    /**
+     * Add options
+     *
+     * @param \TeShopify\Entity\ProductOption $options
+     * @return Product
+     */
+    public function addOption(\TeShopify\Entity\ProductOption $options)
+    {
+        $this->options[] = $options;
+    
+        return $this;
+    }
+
+    /**
+     * Remove options
+     *
+     * @param \TeShopify\Entity\ProductOption $options
+     */
+    public function removeOption(\TeShopify\Entity\ProductOption $options)
+    {
+        $this->options->removeElement($options);
     }
 }

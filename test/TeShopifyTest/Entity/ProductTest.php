@@ -5,6 +5,8 @@ namespace TeShopifyTest\Entity;
 use TeShopifyTest\Bootstrap;
 use TeShopify\Entity\Product;
 use TeShopify\Entity\ProductImage;
+use TeShopify\Entity\ProductOption;
+use TeShopify\Entity\Option;
 
 class ProductTest extends \PHPUnit_Framework_TestCase {
 
@@ -63,6 +65,48 @@ class ProductTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals(2, count($result[0]->getImages()->toArray()));
         $em->detach($ent);
     }
+
+//    public function testCanAddOptionsToProduct() {
+//        $em = Bootstrap::getEntityManager();
+//        $ent = $this->getTestProduct();
+//        $em->persist($ent);
+//        $em->flush();
+//        
+//        $opt1 = new Option();
+//        $opt1->setName('Size');
+//        $opt2 = new Option();
+//        $opt2->setName('Title');
+//        $opt3 = new Option();
+//        $opt3->setName('Color');
+//        $em->persist($opt1);
+//        $em->persist($opt2);
+//        $em->persist($opt3);
+//        $em->flush();
+//
+//        $popt1 = new ProductOption();
+//        $popt1->setOption($opt1);
+//        $popt1->setProduct($ent);
+//        $popt2 = new ProductOption();
+//        $popt2->setOption($opt2);
+//        $popt2->setProduct($ent);
+//        $popt3 = new ProductOption();
+//        $popt3->setOption($opt3);
+//        $popt3->setProduct($ent);
+//        $em->persist($popt1);
+//        $em->persist($popt2);
+//        $em->persist($popt3);
+//        $em->flush();
+//        $ent->addOption($popt1);
+//        $ent->addOption($popt2);
+//        $ent->addOption($popt3);
+//        $em->persist($ent);
+//        $em->flush();
+//        $query = $em->createQuery("Select p from TeShopify\Entity\Product p");
+//        $result = $query->getResult();
+//        $this->assertEquals(1, count($result));
+//        $this->assertEquals(3, count($result[0]->getOptions()->toArray()));
+//        $em->detach($ent);
+//    }
 
     private function getTestProduct() {
         $ent = new Product();
